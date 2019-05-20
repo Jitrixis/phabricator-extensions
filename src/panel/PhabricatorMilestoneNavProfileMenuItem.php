@@ -69,7 +69,7 @@ class PhabricatorMilestoneNavProfileMenuItem
     $parent = $this->newItemView();
     $parent->setName('Series')
       ->setIcon('fa-arrows-h')
-      ->setHref("/project/subprojects/{$parent_id}/")
+      ->setURI("/project/subprojects/{$parent_id}/")
       ->setType(PHUIListItemView::TYPE_LINK);
 
     $items = array($parent);
@@ -92,7 +92,7 @@ class PhabricatorMilestoneNavProfileMenuItem
 
       $items[] = $this->newItemView()
         ->setIcon($icon)
-        ->setHref($uri)
+        ->setURI($uri)
         ->setName($name);
     }
 
