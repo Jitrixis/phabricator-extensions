@@ -35,7 +35,7 @@ final class ProjectBurnupGraphProfileMenuItem
     $href = '/maniphest/report/burn/?project='.$object->getPHID();
 
     $item = $this->newItemView()
-      ->setHref($href)
+      ->setURI($href)
       ->setName($this->getDisplayName($config))
       ->setIcon('fa-anchor')
       ->setTooltip($this->getLinkTooltip($config));
