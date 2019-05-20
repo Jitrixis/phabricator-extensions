@@ -50,7 +50,7 @@ class PhabricatorMilestoneNavProfileMenuItem
     );
   }
 
-  protected function newNavigationMenuItems(
+  protected function newMenuItemViewList(
     PhabricatorProfileMenuItemConfiguration $config) {
     $viewer = $this->getViewer();
     $project = $config->getProfileObject();
@@ -66,7 +66,7 @@ class PhabricatorMilestoneNavProfileMenuItem
       ->setOrderVector(array('-milestoneNumber', 'id'))
       ->execute();
 
-    $parent = $this->newItem();
+    $parent = $this->newItemView();
     $parent->setName('Series')
       ->setIcon('fa-arrows-h')
       ->setHref("/project/subprojects/{$parent_id}/")
@@ -90,7 +90,7 @@ class PhabricatorMilestoneNavProfileMenuItem
         continue;
       }
 
-      $items[] = $this->newItem()
+      $items[] = $this->newItemView()
         ->setIcon($icon)
         ->setHref($uri)
         ->setName($name);
@@ -111,7 +111,7 @@ class PhabricatorMilestoneNavProfileMenuItem
       ),
       $message);
 
-    $item = $this->newItem()
+    $item = $this->newItemView()
       ->appendChild($message);
 
     return array(
