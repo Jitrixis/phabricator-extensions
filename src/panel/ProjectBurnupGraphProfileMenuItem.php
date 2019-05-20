@@ -27,14 +27,14 @@ final class ProjectBurnupGraphProfileMenuItem
     return pht('Number of open tasks over time');
   }
 
-  protected function newNavigationMenuItems(
+  protected function newMenuItemViewList(
     PhabricatorProfileMenuItemConfiguration $config) {
 
     $object = $config->getProfileObject();
 
     $href = '/maniphest/report/burn/?project='.$object->getPHID();
 
-    $item = $this->newItem()
+    $item = $this->newItemView()
       ->setHref($href)
       ->setName($this->getDisplayName($config))
       ->setIcon('fa-anchor')
